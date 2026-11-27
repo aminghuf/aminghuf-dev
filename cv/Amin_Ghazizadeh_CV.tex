@@ -1,0 +1,130 @@
+%-------------------------------------------------------------
+% Europass CV — Amin Ghazizadeh
+% Class: europasscv (CTAN). Compile with: pdflatex Amin_Ghazizadeh_CV.tex (run twice)
+%-------------------------------------------------------------
+\documentclass[english,a4paper,nologo]{europasscv}
+
+\usepackage[english]{babel}
+
+\hypersetup{
+  pdftitle={Amin Ghazizadeh - Curriculum Vitae (Europass)},
+  pdfauthor={Amin Ghazizadeh},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={Kubernetes, KEDA, cloud-native, DevOps, AWS, Docker, Terraform, research internship}
+}
+
+\ecvname{Amin Ghazizadeh}
+\ecvfootername{Amin Ghazizadeh}
+\ecvaddress{Messina, Italy}
+\ecvmobile{+39 351 941 9852}
+\ecvemail{amin.gha98@gmail.com}
+\ecvhomepage{aminghuf.com}
+\ecvgithubpage{github.com/aminghuf}
+\ecvlinkedinpage{linkedin.com/in/aminghazizadeh}
+
+\begin{document}
+\begin{europasscv}
+
+\ecvpersonalinfo
+
+%----------------------------------------------------------
+\ecvsection{Personal statement}
+\ecvitem{}{Computer Science and Data Analysis undergraduate and research intern at FCRlab (University of Messina), benchmarking Kubernetes autoscaling (KEDA vs.\ Intent Driven Orchestration) for my bachelor's thesis. AWS Certified Solutions Architect -- Associate who runs containerised services on self-managed infrastructure. Seeking a summer research internship in cloud-native and distributed systems.}
+
+%----------------------------------------------------------
+\ecvsection{Work experience}
+
+\ecvtitlelevel{Oct 2026 -- Present}{Cloud-Native Research Intern}{\href{https://github.com/aminghuf/ido}{github.com/aminghuf/ido}}
+\ecvitem{}{FCRlab, University of Messina, Messina (Italy)}
+\ecvitem{}{\begin{ecvitemize}
+  \item Benchmarking Kubernetes autoscaling: Intent Driven Orchestration (IDO) vs.\ KEDA.
+  \item Built a kind, Helm and KEDA test environment for reproducible benchmarking experiments.
+  \item Internship work forms the basis of my bachelor's thesis on the same topic.
+\end{ecvitemize}}
+
+\ecvtitle{2022 -- 2023}{Scrum Master}
+\ecvitem{}{ArmanIT (on-site)}
+\ecvitem{}{\begin{ecvitemize}
+  \item Facilitated sprints and Agile ceremonies for a digital banking project; tracked KPIs.
+  \item Acted as the liaison between product owners, developers and stakeholders.
+\end{ecvitemize}}
+
+\ecvtitle{2021 -- 2022}{Frontend Developer}
+\ecvitem{}{Codearx (on-site)}
+\ecvitem{}{\begin{ecvitemize}
+  \item Built responsive React, HTML and CSS interfaces with designers and backend developers.
+  \item Took part in weekly code reviews and applied UI development best practices.
+\end{ecvitemize}}
+
+%----------------------------------------------------------
+\ecvsection{Education and training}
+
+\ecvtitle{Sep 2024 -- Jun 2027}{B.Sc.\ in Computer Science and Data Analysis}
+\ecvitem{}{University of Messina, Messina (Italy)}
+\ecvitem{}{\begin{ecvitemize}
+  \item Thesis: Kubernetes autoscaling performance with KEDA (in progress, carried out at FCRlab).
+  \item Coursework: Data Structures, Algorithms, Databases, Computer Systems, Virtualization Systems, Object-Oriented Programming, Machine Learning, Data Mining.
+\end{ecvitemize}}
+
+\ecvtitle{2026}{AWS Certified Solutions Architect -- Associate (SAA-C03)}
+\ecvitem{}{Amazon Web Services \quad \small\href{https://www.credly.com/badges/5af1083b-ebf2-4efe-803c-9bf532299f92}{Verify on Credly}}
+
+\ecvtitle{2026}{DevOps Engineering Program (140 hours)}
+\ecvitem{}{Sananetco --- Docker and Kubernetes; infrastructure as code with Terraform and Ansible; CI/CD and GitOps with ArgoCD; AWS deployments monitored with Prometheus and Grafana.}
+
+\ecvtitle{2026}{Linux for DevOps -- LPIC-1 / LPIC-2 curriculum (75 hours)}
+\ecvitem{}{Sananetco --- Linux administration end to end: boot process (GRUB, systemd), storage (RAID, LVM), networking (DNS, DHCP, SSH, TCP/IP), Bash automation and performance monitoring.}
+
+%----------------------------------------------------------
+\ecvsection{Research}
+
+\ecvtitle{In preparation}{Chess engine decision-making benchmark}
+% TODO: replace with full title, venue and link once the paper is released
+\ecvitem{}{Co-authored with Prof.\ Paolo Ciancarini (University of Bologna); corresponding author.}
+
+%----------------------------------------------------------
+\ecvsection{Projects}
+
+\ecvtitlelevel{2026}{Patzer -- open-source contribution}{\href{https://github.com/aminghuf/patzer}{github.com/aminghuf/patzer}}
+\ecvitem{}{\begin{ecvitemize}
+  \item Merged upstream (PR \#44) into Patzer, a self-hosted chess platform: automatic chess.com game import and review, chess-api.com engine option, DeepSeek as LLM coach.
+  \item Self-hosted on a Hetzner VPS behind Caddy, deployed via GitHub Actions over SSH.
+\end{ecvitemize}}
+
+\ecvtitlelevel{2026}{URL Shortener}{\href{https://github.com/aminghuf/URL_shortner}{github.com/aminghuf/URL\_shortner}}
+\ecvitem{}{\begin{ecvitemize}
+  \item Docker Compose stack: Redis caching, Nginx rate limiting, concurrent request handling; CI/CD on GitHub Actions.
+  \item Proposed and built as the project for the Virtualization Systems course.
+\end{ecvitemize}}
+
+\ecvtitle{Ongoing}{Homelab and Kubernetes practice}
+\ecvitem{}{\begin{ecvitemize}
+  \item Arch Linux home server running containerised services via Cloudflare Tunnel, Tailscale.
+  \item Bootstrapped a 3-node kubeadm cluster with Flannel CNI (DigitalOcean, Oracle Cloud); practice on kind and k3s.
+\end{ecvitemize}}
+
+\ecvtitlelevel{2026}{HouseMate}{\href{https://github.com/aminghuf/housemate}{github.com/aminghuf/housemate}}
+\ecvitem{}{Telegram bot for shared households---chore rotation, bill splitting, shared shopping list and daily reminders. Python, aiogram, SQLAlchemy/Alembic, Docker.}
+
+%----------------------------------------------------------
+\ecvsection{Personal skills}
+
+\ecvmothertongue{Persian}
+
+\ecvlanguageheader
+\ecvlanguage{English}{C1}{C1}{C1}{C1}{C1}
+\ecvlanguage{Italian}{A2}{A2}{A2}{A2}{A2}
+\ecvlastlanguage{French}{A1}{A1}{A1}{A1}{A1}
+\ecvlanguagefooter
+
+\ecvblueitem{Digital skills}{
+  \textbf{Cloud \& containers:} AWS (VPC, IAM, EC2, S3), Docker, Docker Compose/Swarm, Kubernetes, Helm, KEDA, kind, k3s\newline
+  \textbf{Infrastructure as code \& CI/CD:} Terraform, Ansible, GitHub Actions, GitLab CI, ArgoCD\newline
+  \textbf{Networking \& services:} Nginx, Caddy, Cloudflare Tunnel, Tailscale, Redis\newline
+  \textbf{Monitoring:} Prometheus, Grafana\newline
+  \textbf{Programming:} Python, Bash, SQL, Java, HTML/CSS\newline
+  \textbf{Tools \& practices:} Linux (Arch, Ubuntu), Git, MySQL, Agile/Scrum
+}
+
+\end{europasscv}
+\end{document}

@@ -1,4 +1,4 @@
-# aminghuf.dev
+# aminghuf.com
 
 Personal landing page / CV site. Plain HTML, CSS and JS — no build step.
 
@@ -7,7 +7,8 @@ Personal landing page / CV site. Plain HTML, CSS and JS — no build step.
 - `index.html` — page content
 - `style.css` — styling
 - `script.js` — nav toggle + scroll-reveal
-- `assets/Amin_G_Resume.pdf` — downloadable CV (linked from the hero section)
+- `assets/Amin_Ghazizadeh_CV.pdf` — downloadable Europass CV (linked from the hero section)
+- `cv/Amin_Ghazizadeh_CV.tex` — LaTeX source of the CV (`europasscv` class; build with `pdflatex`, run twice)
 - `CNAME` — custom domain for GitHub Pages
 
 ## Editing
@@ -18,9 +19,9 @@ Just edit `index.html` / `style.css` directly and push — GitHub Pages redeploy
 
 1. Push this repo to GitHub.
 2. Repo Settings → Pages → Source: deploy from branch `main`, folder `/ (root)`.
-3. Repo Settings → Pages → Custom domain: `aminghuf.dev` (the `CNAME` file already sets this).
+3. Repo Settings → Pages → Custom domain: `aminghuf.com` (the `CNAME` file already sets this).
 4. At your domain registrar, point DNS at GitHub Pages:
-   - `A` records for the apex domain (`aminghuf.dev`) to GitHub's Pages IPs:
+   - `A` records for the apex domain (`aminghuf.com`) to GitHub's Pages IPs:
      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - or a `CNAME` record if using a `www` subdomain instead.
 5. Enable "Enforce HTTPS" once DNS propagates.
