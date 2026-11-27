@@ -1,130 +1,287 @@
-%-------------------------------------------------------------
-% Europass CV — Amin Ghazizadeh
-% Class: europasscv (CTAN). Compile with: pdflatex Amin_Ghazizadeh_CV.tex (run twice)
-%-------------------------------------------------------------
-\documentclass[english,a4paper,nologo]{europasscv}
+%-------------------------
+% Resume in Latex
+% Author : Harshibar
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
 
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Amin Ghazizadeh - CV}, pdfauthor={Amin Ghazizadeh}, pdfkeywords={Kubernetes, KEDA, cloud-native, DevOps, AWS, research}}
+\usepackage{fancyhdr}
 \usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+\input{glyphtounicode}
 
-\hypersetup{
-  pdftitle={Amin Ghazizadeh - Curriculum Vitae (Europass)},
-  pdfauthor={Amin Ghazizadeh},
-  pdfsubject={Curriculum Vitae},
-  pdfkeywords={Kubernetes, KEDA, cloud-native, DevOps, AWS, Docker, Terraform, research internship}
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
 }
 
-\ecvname{Amin Ghazizadeh}
-\ecvfootername{Amin Ghazizadeh}
-\ecvaddress{Messina, Italy}
-\ecvmobile{+39 351 941 9852}
-\ecvemail{amin.gha98@gmail.com}
-\ecvhomepage{aminghuf.com}
-\ecvgithubpage{github.com/aminghuf}
-\ecvlinkedinpage{linkedin.com/in/aminghazizadeh}
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.72in}
+\addtolength{\textheight}{1.22in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{0pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-6pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey} \small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=-2pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
-\begin{europasscv}
 
-\ecvpersonalinfo
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge AMIN GHAZIZADEH} \\ \vspace{5pt}
+    \footnotesize Phone: \texttt{+39 3519419852} \hspace{1pt} $|$
+    \hspace{1pt} Email: \texttt{\href{mailto:amin.gha98@gmail.com}{amin.gha98@gmail.com}} \hspace{1pt} $|$
+    \hspace{1pt} Website: \texttt{\href{https://aminghuf.com}{aminghuf.com}} \hspace{1pt} $|$
+    \hspace{1pt} Location: Messina, Italy \\ \vspace{2pt}
+    GitHub: \texttt{\href{https://github.com/aminghuf}{aminghuf}} \hspace{1pt} $|$
+    \hspace{1pt} LinkedIn: \texttt{\href{https://www.linkedin.com/in/aminghazizadeh/}{aminghazizadeh}} \hspace{1pt} $|$
+    \hspace{1pt} ORCID: \texttt{\href{https://orcid.org/0009-0004-2881-5217}{0009-0004-2881-5217}}
+    \\ \vspace{-3pt}
+\end{center}
 
-%----------------------------------------------------------
-\ecvsection{Personal statement}
-\ecvitem{}{Computer Science and Data Analysis undergraduate and research intern at FCRlab (University of Messina), benchmarking Kubernetes autoscaling (KEDA vs.\ Intent Driven Orchestration) for my bachelor's thesis. AWS Certified Solutions Architect -- Associate who runs containerised services on self-managed infrastructure. Seeking a summer research internship in cloud-native and distributed systems.}
-
-%----------------------------------------------------------
-\ecvsection{Work experience}
-
-\ecvtitlelevel{Oct 2026 -- Present}{Cloud-Native Research Intern}{\href{https://github.com/aminghuf/ido}{github.com/aminghuf/ido}}
-\ecvitem{}{FCRlab, University of Messina, Messina (Italy)}
-\ecvitem{}{\begin{ecvitemize}
-  \item Benchmarking Kubernetes autoscaling: Intent Driven Orchestration (IDO) vs.\ KEDA.
-  \item Built a kind, Helm and KEDA test environment for reproducible benchmarking experiments.
-  \item Internship work forms the basis of my bachelor's thesis on the same topic.
-\end{ecvitemize}}
-
-\ecvtitle{2022 -- 2023}{Scrum Master}
-\ecvitem{}{ArmanIT (on-site)}
-\ecvitem{}{\begin{ecvitemize}
-  \item Facilitated sprints and Agile ceremonies for a digital banking project; tracked KPIs.
-  \item Acted as the liaison between product owners, developers and stakeholders.
-\end{ecvitemize}}
-
-\ecvtitle{2021 -- 2022}{Frontend Developer}
-\ecvitem{}{Codearx (on-site)}
-\ecvitem{}{\begin{ecvitemize}
-  \item Built responsive React, HTML and CSS interfaces with designers and backend developers.
-  \item Took part in weekly code reviews and applied UI development best practices.
-\end{ecvitemize}}
-
-%----------------------------------------------------------
-\ecvsection{Education and training}
-
-\ecvtitle{Sep 2024 -- Jun 2027}{B.Sc.\ in Computer Science and Data Analysis}
-\ecvitem{}{University of Messina, Messina (Italy)}
-\ecvitem{}{\begin{ecvitemize}
-  \item Thesis: Kubernetes autoscaling performance with KEDA (in progress, carried out at FCRlab).
-  \item Coursework: Data Structures, Algorithms, Databases, Computer Systems, Virtualization Systems, Object-Oriented Programming, Machine Learning, Data Mining.
-\end{ecvitemize}}
-
-\ecvtitle{2026}{AWS Certified Solutions Architect -- Associate (SAA-C03)}
-\ecvitem{}{Amazon Web Services \quad \small\href{https://www.credly.com/badges/5af1083b-ebf2-4efe-803c-9bf532299f92}{Verify on Credly}}
-
-\ecvtitle{2026}{DevOps Engineering Program (140 hours)}
-\ecvitem{}{Sananetco --- Docker and Kubernetes; infrastructure as code with Terraform and Ansible; CI/CD and GitOps with ArgoCD; AWS deployments monitored with Prometheus and Grafana.}
-
-\ecvtitle{2026}{Linux for DevOps -- LPIC-1 / LPIC-2 curriculum (75 hours)}
-\ecvitem{}{Sananetco --- Linux administration end to end: boot process (GRUB, systemd), storage (RAID, LVM), networking (DNS, DHCP, SSH, TCP/IP), Bash automation and performance monitoring.}
-
-%----------------------------------------------------------
-\ecvsection{Research}
-
-\ecvtitle{In preparation}{Chess engine decision-making benchmark}
-% TODO: replace with full title, venue and link once the paper is released
-\ecvitem{}{Co-authored with Prof.\ Paolo Ciancarini (University of Bologna); corresponding author.}
-
-%----------------------------------------------------------
-\ecvsection{Projects}
-
-\ecvtitlelevel{2026}{Patzer -- open-source contribution}{\href{https://github.com/aminghuf/patzer}{github.com/aminghuf/patzer}}
-\ecvitem{}{\begin{ecvitemize}
-  \item Merged upstream (PR \#44) into Patzer, a self-hosted chess platform: automatic chess.com game import and review, chess-api.com engine option, DeepSeek as LLM coach.
-  \item Self-hosted on a Hetzner VPS behind Caddy, deployed via GitHub Actions over SSH.
-\end{ecvitemize}}
-
-\ecvtitlelevel{2026}{URL Shortener}{\href{https://github.com/aminghuf/URL_shortner}{github.com/aminghuf/URL\_shortner}}
-\ecvitem{}{\begin{ecvitemize}
-  \item Docker Compose stack: Redis caching, Nginx rate limiting, concurrent request handling; CI/CD on GitHub Actions.
-  \item Proposed and built as the project for the Virtualization Systems course.
-\end{ecvitemize}}
-
-\ecvtitle{Ongoing}{Homelab and Kubernetes practice}
-\ecvitem{}{\begin{ecvitemize}
-  \item Arch Linux home server running containerised services via Cloudflare Tunnel, Tailscale.
-  \item Bootstrapped a 3-node kubeadm cluster with Flannel CNI (DigitalOcean, Oracle Cloud); practice on kind and k3s.
-\end{ecvitemize}}
-
-\ecvtitlelevel{2026}{HouseMate}{\href{https://github.com/aminghuf/housemate}{github.com/aminghuf/housemate}}
-\ecvitem{}{Telegram bot for shared households---chore rotation, bill splitting, shared shopping list and daily reminders. Python, aiogram, SQLAlchemy/Alembic, Docker.}
-
-%----------------------------------------------------------
-\ecvsection{Personal skills}
-
-\ecvmothertongue{Persian}
-
-\ecvlanguageheader
-\ecvlanguage{English}{C1}{C1}{C1}{C1}{C1}
-\ecvlanguage{Italian}{A2}{A2}{A2}{A2}{A2}
-\ecvlastlanguage{French}{A1}{A1}{A1}{A1}{A1}
-\ecvlanguagefooter
-
-\ecvblueitem{Digital skills}{
-  \textbf{Cloud \& containers:} AWS (VPC, IAM, EC2, S3), Docker, Docker Compose/Swarm, Kubernetes, Helm, KEDA, kind, k3s\newline
-  \textbf{Infrastructure as code \& CI/CD:} Terraform, Ansible, GitHub Actions, GitLab CI, ArgoCD\newline
-  \textbf{Networking \& services:} Nginx, Caddy, Cloudflare Tunnel, Tailscale, Redis\newline
-  \textbf{Monitoring:} Prometheus, Grafana\newline
-  \textbf{Programming:} Python, Bash, SQL, Java, HTML/CSS\newline
-  \textbf{Tools \& practices:} Linux (Arch, Ubuntu), Git, MySQL, Agile/Scrum
+\section{SUMMARY}
+\small{
+Computer Science and Data Analysis undergraduate and research intern at FCRlab (University of Messina), benchmarking Kubernetes autoscaling (KEDA vs.\ Intent Driven Orchestration) for my bachelor's thesis. Corresponding author of a controlled study on prompting LLMs to play chess at a set skill level. AWS Certified Solutions Architect -- Associate who runs containerised services on self-managed infrastructure. Seeking a summer research internship in cloud-native and distributed systems.
 }
 
-\end{europasscv}
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+\resumeSubheading
+      {Cloud-Native Research Intern}{Oct 2026 -- Present}
+      {FCRlab, University of Messina}{\href{https://github.com/aminghuf/ido}{github.com/aminghuf/ido}}
+      \resumeItemListStart
+        \resumeItem{Benchmarking Kubernetes autoscaling: Intent Driven Orchestration (IDO) vs.\ KEDA event-driven scaling.}
+        \resumeItem{Built a kind, Helm and KEDA test environment for reproducible benchmarking experiments; the work forms my bachelor's thesis.}
+\resumeItemListEnd
+
+\resumeSubheading
+      {Scrum Master}{2022 -- 2023}
+      {ArmanIT}{On-site}
+      \resumeItemListStart
+        \resumeItem{Facilitated sprints and Agile ceremonies for a digital banking project; tracked KPIs and milestones.}
+        \resumeItem{Acted as the liaison between product owners, developers and stakeholders.}
+\resumeItemListEnd
+
+\resumeSubheading
+      {Frontend Developer}{2021 -- 2022}
+      {Codearx}{On-site}
+      \resumeItemListStart
+        \resumeItem{Built responsive React, HTML and CSS interfaces with designers and backend developers.}
+        \resumeItem{Took part in weekly code reviews and applied UI development best practices.}
+\resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH-----------
+\section{RESEARCH}
+  \resumeSubHeadingListStart
+\resumeSubheading
+      {Chess Skill-Adaptation Benchmark for LLMs and Decision Models}{2026}
+      {With Prof.\ Paolo Ciancarini (University of Bologna) -- corresponding author}{Manuscript in preparation}
+      % TODO: add venue, DOI/arXiv link and replication-package link once released
+      \resumeItemListStart
+        \resumeItem{\textbf{Paper:} \textit{Can a Prompt Set Playing Strength in Chess? A Controlled Assessment of Skill Adaptation in a Decision Model and a General-Purpose LLM.}}
+        \resumeItem{Designed a benchmark testing whether a prompt can set the playing strength of a commercial decision model (Jev) and an LLM (DeepSeek), against Maia-3, Stockfish-softmax and uniform baselines.}
+        \resumeItem{Built the data pipeline in Python: 10,008 Lichess positions scored with Stockfish 19; evaluated log loss, top-1 accuracy, calibration (ECE) and expected-score loss with paired bootstrap CIs and Holm correction.}
+        \resumeItem{Found that skill instructions changed the LLM's stated move probabilities more than the moves it played, and that only Maia-3 clearly used a player's rating to predict their move.}
+        \resumeItem{Prepared a replication package (code, prompts, raw API logs) in which one offline command re-verifies every reported number.}
+\resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+  \resumeSubHeadingListStart
+
+\resumeProjectHeading
+      {\textbf{Chesspirit} $|$ \textit{\small TypeScript, Node.js, Docker, Stockfish, GitHub Actions}}{\href{https://chesspirit.app}{chesspirit.app} $|$ \href{https://github.com/aminghuf/chesspirit}{github.com/aminghuf/chesspirit}}
+      \resumeItemListStart
+        \resumeItem{Maintain an open-source (MIT) chess review platform, forked from Patzer and now developed independently: Stockfish grades every move of Chess.com/Lichess games and turns mistakes into puzzles, with an optional LLM coach (Ollama, vLLM, DeepSeek).}
+        \resumeItem{CI on GitHub Actions (typecheck, unit, Playwright end-to-end and Docker smoke tests), automated image publishing and releases (v7.0.0); continuous deployment over SSH to a Hetzner VPS behind Caddy.}
+        \resumeItem{Review and merge community contributions, including German, Spanish and Russian localisations and Lichess import.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{URL Shortener} $|$ \textit{\small Python, Docker Compose, Redis, Nginx, GitHub Actions}}{\href{https://github.com/aminghuf/URL_shortner}{github.com/aminghuf/URL\_shortner}}
+      \resumeItemListStart
+        \resumeItem{Containerised service with Redis caching, Nginx rate limiting and concurrent request handling; CI/CD on GitHub Actions. Built as the Virtualization Systems course project.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{Homelab \& Kubernetes Practice} $|$ \textit{\small Arch Linux, Docker, kubeadm, Cloudflare Tunnel, Tailscale}}{Ongoing}
+      \resumeItemListStart
+        \resumeItem{Home server running containerised services via Cloudflare Tunnel and Tailscale; bootstrapped a 3-node kubeadm cluster with Flannel CNI (DigitalOcean, Oracle Cloud); ongoing practice on kind and k3s.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+      {\textbf{HouseMate} $|$ \textit{\small Python, aiogram, SQLAlchemy/Alembic, Docker}}{\href{https://github.com/aminghuf/housemate}{github.com/aminghuf/housemate}}
+      \resumeItemListStart
+        \resumeItem{Telegram bot for shared households: chore rotation, bill splitting, shared shopping list and daily reminders.}
+\resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS & TRAINING-----------
+\section{CERTIFICATIONS \& TRAINING}
+  \resumeSubHeadingListStart
+\resumeSubheading
+      {AWS Certified Solutions Architect -- Associate (SAA-C03)}{2026}
+      {Amazon Web Services}{\href{https://www.credly.com/badges/5af1083b-ebf2-4efe-803c-9bf532299f92}{Verify on Credly}}
+      \vspace{2pt}
+\resumeSubheading
+      {DevOps Engineering Program}{2026}
+      {Sananetco}{140 Hours}
+      \resumeItemListStart
+        \resumeItem{Docker and Kubernetes; Terraform and Ansible; CI/CD and GitOps with ArgoCD; AWS deployments monitored with Prometheus and Grafana.}
+\resumeItemListEnd
+\resumeSubheading
+      {Linux for DevOps (LPIC-1 / LPIC-2 Curriculum)}{2026}
+      {Sananetco}{75 Hours}
+      \resumeItemListStart
+        \resumeItem{Boot process (GRUB, systemd), storage (RAID, LVM), networking (DNS, DHCP, SSH, TCP/IP), Bash automation and performance monitoring.}
+\resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section {EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Messina}{Sep. 2024 -- Jun. 2027}
+      {B.Sc. in Computer Science and Data Analysis}{Messina, Italy}
+      	\resumeItemListStart
+        \resumeItem{\textbf{Thesis}: Kubernetes autoscaling performance with KEDA (in progress, carried out at FCRlab)}
+    	\resumeItem{\textbf{Coursework}: Data Structures, Algorithms, Databases, Computer Systems, Virtualization Systems, Object-Oriented Programming, Machine Learning, Data Mining}
+\resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{SKILLS}
+
+\begin{itemize}[leftmargin=0in, label={}]
+\small{\item{
+
+\textbf{Cloud \& Containers:} AWS (VPC, IAM, EC2, S3), Docker, Docker Compose/Swarm, Kubernetes, Helm, KEDA, kind, k3s \\
+
+\textbf{IaC \& CI/CD:} Terraform, Ansible, GitHub Actions, GitLab CI, ArgoCD \\
+
+\textbf{Networking \& Monitoring:} Nginx, Caddy, Cloudflare Tunnel, Tailscale, Redis, Prometheus, Grafana \\
+
+\textbf{Programming:} Python, Bash, SQL, Java, HTML/CSS \\
+
+\textbf{Tools \& Practices:} Linux (Arch, Ubuntu), Git, MySQL, Agile/Scrum \\
+
+\textbf{Languages:} Persian (native), English (C1), Italian (A2), French (A1)
+
+}}
+\end{itemize}
+
+
+%-------------------------------------------
 \end{document}

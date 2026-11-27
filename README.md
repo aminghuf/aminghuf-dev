@@ -7,8 +7,8 @@ Personal landing page / CV site. Plain HTML, CSS and JS — no build step.
 - `index.html` — page content
 - `style.css` — styling
 - `script.js` — nav toggle + scroll-reveal
-- `assets/Amin_Ghazizadeh_CV.pdf` — downloadable Europass CV (linked from the hero section)
-- `cv/Amin_Ghazizadeh_CV.tex` — LaTeX source of the CV (`europasscv` class; build with `pdflatex`, run twice)
+- `assets/Amin_Ghazizadeh_CV.pdf` — downloadable CV (linked from the hero section)
+- `cv/Amin_Ghazizadeh_CV.tex` — LaTeX source of the CV (build with `pdflatex`)
 - `CNAME` — custom domain for GitHub Pages
 
 ## Editing
