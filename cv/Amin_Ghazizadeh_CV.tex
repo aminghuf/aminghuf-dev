@@ -19,8 +19,11 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-% only for pdflatex
-\input{glyphtounicode}
+% machine-readable PDF text (pdfLaTeX only; skipped on XeLaTeX/LuaLaTeX)
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
 
 % fontawesome
 \usepackage{fontawesome5}
@@ -85,7 +88,9 @@
 
 % only for pdflatex
 % Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
 
 %-------------------------
 % Custom commands
